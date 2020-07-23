@@ -48,4 +48,4 @@ suit=loader.discover(load_test_path)
 
 # 生成图形式报告
 runner=BeautifulReport(suit)
-runner.report(description='测试报告',filename=time.strftime("%Y_%m_%d",time.localtime(time.time())).replace('/','_') +'_report.html',report_dir=load_test_report_path)
+runner.report(description='测试报告',filename='report.html',report_dir=load_test_report_path)
