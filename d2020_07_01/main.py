@@ -4,7 +4,8 @@
 #@Email     :1027867874@qq.com
 #@File      :runner.py
 #@Software  :PyCharm
-
+import sys
+sys.path.insert(0,'.')
 import unittest
 # from HTMLTestRunnerNew import HTMLTestRunner
 import time
@@ -15,6 +16,7 @@ from d2020_07_01.test_cases.test_recharge import TestRecharge
 from d2020_07_01.test_cases.test_withdraw import TestWithDraw
 from d2020_07_01.test_cases.test_loan import TestLoan
 from d2020_07_01.common import EnvData
+
 
 #第一种方法
 # suit = unittest.TestSuite()
