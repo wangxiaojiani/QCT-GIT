@@ -1,0 +1,19 @@
+# 练习的模块
+name: xiaojian #value 字符串
+user: xiaojain #value 字符串
+passwd: 123456.3 #value 浮点形
+passw2d: 123456.3 #value 整形
+booi: True #value bool
+hah: None # value识别字符串
+daff: (1,3,4,jdajd) #value识别字符串
+daf: [1,3,4,jdajd] # 列表 里面元素python会自动识别 非标砖做法
+dhahda: {dh: dnan,dhah: jdajda} # 非标准做法
+key:
+    - key1
+    - key2
+mysql:
+    user: xiaojain
+    passwd: 123456
+    booi: True
+    hah: None
+    daf: [1,3,dad]
