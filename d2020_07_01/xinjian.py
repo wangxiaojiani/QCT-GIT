@@ -7,3 +7,5 @@ print("jhaja")
 print("bgubugbgu")
 
 
+def haha():
+    print('dajfawjf')
