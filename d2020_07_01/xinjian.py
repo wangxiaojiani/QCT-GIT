@@ -3,3 +3,4 @@
 # @Author : wangj38
 # @File : xinjian.py 
 # @Software: PyCharm
+print("jhaja")
