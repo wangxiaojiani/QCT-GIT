@@ -20,9 +20,7 @@ class EnvData(object):
 def re_replace(target,obj=EnvData):
     """
     # 通过字符串正则匹配的方式将excel中读取参数化数据进行替换
-
      真实数据只从2个地方去获取：1个是配置文件当中的DATA区域 。另1个是，EvnData的类属性。
-
     :param target:字典中每个key对应的value
     :param obj: EnvData类的实例对象
     :return:
@@ -57,7 +55,6 @@ def clear_Envdata_attr():
     清除EnvData类中的类属性
     :return:
     """
-
     values = EnvData.__dict__ # 得到的<class 'mappingproxy'>
     for key,value in dict(values).items():
         if key.startswith('__') or key == 'old_phone':
@@ -76,14 +73,21 @@ def extract_data_from_excel(extract_exprs,response_dict):
   """
   extract_dict =json.loads(extract_exprs) # 将从excel中读取出的提取表达式转换为字典
   for key,value in extract_dict.items():
-      res = str(jsonpath.jsonpath(response_dict,value)[0]) #匹配到数据返回列表 匹配不到返回false
-      if res :
-          setattr(EnvData,key,res)
-
+      try:
+          res = str(jsonpath.jsonpath(response_dict,value)[0])       #   匹配到数据返回列表 匹配不到返回false
+      except Exception as e:
+          logger.info("对响应结果的替换出现错误")
+          raise e
+      else:
+          if res :
+            setattr(EnvData,key,res)
 
 
 if __name__ == '__main__':
     print(EnvData.__dict__ )
+
+
+
 
 
 

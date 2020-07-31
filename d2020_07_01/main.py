@@ -29,15 +29,15 @@ from d2020_07_01.common import EnvData
 
 
 # 运行所有用例采用此方法
-loader = unittest.TestLoader()
-suit=loader.discover(load_test_path)
+# loader = unittest.TestLoader()
+# suit=loader.discover(load_test_path)
 
 # 运行单独-》类测试用例 采用此方法
-# suit = unittest.TestSuite()
-# loader = unittest.TestLoader()
+suit = unittest.TestSuite()
+loader = unittest.TestLoader()
 # # suit.addTest(loader.loadTestsFromTestCase(TestRecharge))
 # suit.addTest(loader.loadTestsFromTestCase(TestWithDraw))
-# suit.addTest(loader.loadTestsFromTestCase(TestInvest))
+suit.addTest(loader.loadTestsFromTestCase(TestInvest))
 # suit.addTest(loader.loadTestsFromTestCase(TestLoan))
 
 # 生成表格式报告
