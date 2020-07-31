@@ -6,6 +6,7 @@
 import requests
 from d2020_07_01.common.myconfig import cnf
 from d2020_07_01.common.mylog import logger
+from d2020_07_01.common.handle_rsa import generator_sign
 import json
 domain_url =cnf.read_section_to_dict("DOMAIN")["ip"]
 
@@ -23,7 +24,8 @@ class MyRequest(object):
         :return:请求头
         """
         headers = {"Content-Type" : "application/json",
-                "X-Lemonban-Media-Type" : "lemonban.v2"}
+                   # 为了兼容v3版本 所以将v3版本的auth_type 设置到了配置文件中
+                "X-Lemonban-Media-Type" : cnf.read_section_to_dict("DOMAIN")["auth_type"]}
 
         if token:
             headers["Authorization"] ="Bearer {}".format(token)
@@ -40,18 +42,27 @@ class MyRequest(object):
 
         if self.url.startswith('/'):
             return domain_url + self.url
-        return domain_url + '/' + self.url
+        elif self.url.startswith('http://') or self.url.startswith("https://"):  # 加上这个判断视为了考虑到mock服务
+            return self.url
+        else:
+            return domain_url + '/' + self.url
 
-    def __pre_data(self):
+    def __pre_data(self,token=None):
         """
         对excel中所传的字典参数进行处理
         :return:
         """
         if self.data is not None and isinstance (self.data, str):
             # param = json.loads (self.data)
-            if self.data.find('null') !=-1:
+            if self.data.find('null') != -1:
                 self.data = self.data.replace('null',"None")
-            param = eval(self.data) # 这里用eval 可以自动计算excel总编辑的表达式
+            param = eval(self.data)   # 这里用eval 可以自动计算excel总编辑的表达式
+
+        # 如果是v3版本需要I加上签名
+        if cnf.read_section_to_dict("DOMIAN")['auth'] == "lemonban.v3" and token is not None:
+            sign,time_stamp = generator_sign(token)
+            param["sign"] = sign
+            param["timestamp"] = time_stamp
             return param
         return self.data
 
@@ -63,7 +74,7 @@ class MyRequest(object):
         url = self.__pre_url ()
 
         # 对excel中接口所传的字符串类型的字典参数进行json化处理
-        data=self.__pre_data ()
+        data=self.__pre_data (token)
 
         logger.info ("请求头 -> {}".format (headers))
         logger.info ("请求方法 -> {}".format (self.method))
