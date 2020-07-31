@@ -59,7 +59,7 @@ class MyRequest(object):
             param = eval(self.data)   # 这里用eval 可以自动计算excel总编辑的表达式
 
         # 如果是v3版本需要I加上签名
-        if cnf.read_section_to_dict("DOMIAN")['auth'] == "lemonban.v3" and token is not None:
+        if cnf.read_section_to_dict("DOMAIN")['auth'] == "lemonban.v3" and token is not None:
             sign,time_stamp = generator_sign(token)
             param["sign"] = sign
             param["timestamp"] = time_stamp
