@@ -120,13 +120,13 @@ if __name__ == '__main__':
     # print(resp.json())
     add_url = "/futureloan/loan/add"
     add_datas = {
-	"member_id":memberid,
-	"title":"借款项目01",
-	"amount":500000.00,
-	"loan_rate":18.0,
-	"loan_term":6,
-	"loan_date_type":1,
-	"bidding_days":10}
+    "member_id":memberid,
+    "title":"借款项目01",
+    "amount":500000.00,
+    "loan_rate":18.0,
+    "loan_term":6,
+    "loan_date_type":1,
+    "bidding_days":10}
     resp = MyRequest("post", add_url, add_datas).send_requests(token)
     print(resp.text)
     loan_id = resp.json()['data']['id']

@@ -4,6 +4,7 @@
 #@Email     :1027867874@qq.com
 #@File      :test_invest.py
 #@Software  :PyCharm
+
 import unittest
 from ddt import ddt,data
 from d2020_07_01.common.myconfig import cnf
