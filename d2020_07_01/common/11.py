@@ -60,6 +60,6 @@ json_obj = json.loads(jsonStr)
 # eg1： 提取所有包含addr属性的老师信息，结果为list类型
 results = jsonpath.jsonpath(json_obj,"$..id")
 print(results)
-
+print('hah')
 s='6.45'
 print(round(float(s)))
