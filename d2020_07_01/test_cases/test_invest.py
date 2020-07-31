@@ -75,7 +75,7 @@ class TestInvest(unittest.TestCase):
                     case['param'] = re_replace(case['param'])
                 else:
                     case['param'] = re_replace(case['param'],case['obj']) # 用例作为单独用例设置为对象属性
-
+        logger.info("=====请求参数为{}".format(case['param']))
 
         if case['type'] =='case':
             if case['expect_result'] is not None and isinstance (case['expect_result'], str):

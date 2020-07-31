@@ -68,26 +68,26 @@ def generator_sign(token):
 
 
 if __name__ == '__main__':
-    import requests
-    # lemon_v3测试
-    headers = {"X-Lemonban-Media-Type": "lemonban.v3",
-               "Content-Type": "application/json"}
-
-    # 登陆接口
-    login_url = "http://api.lemonban.com/futureloan/member/login"
-    login_datas = {"mobile_phone": "13845467789", "pwd": "1234567890"}
-    resp = requests.request("POST", login_url, json=login_datas,headers=headers)
-    token = resp.json()["data"]["token_info"]["token"]
-    member_id = resp.json()["data"]["id"]
-
-
-    headers["Authorization"] = "Bearer {}".format(token)
-    sign,timestamp = generator_sign(token)
-    print("签名为： ",sign,"\n时间戳为： ",timestamp)
-
-    recharge_url = "http://api.lemonban.com/futureloan/member/recharge"
-    recharge_data = {"member_id": member_id, "amount": 2000,"sign":sign,"timestamp":timestamp}
-    resp = requests.request("POST", recharge_url, json=recharge_data, headers=headers)
-    print(resp.json())
-    # 充值接口
-
+    # import requests
+    # # lemon_v3测试
+    # headers = {"X-Lemonban-Media-Type": "lemonban.v3",
+    #            "Content-Type": "application/json"}
+    #
+    # # 登陆接口
+    # login_url = "http://api.lemonban.com/futureloan/member/login"
+    # login_datas = {"mobile_phone": "13845467789", "pwd": "1234567890"}
+    # resp = requests.request("POST", login_url, json=login_datas,headers=headers)
+    # token = resp.json()["data"]["token_info"]["token"]
+    # member_id = resp.json()["data"]["id"]
+    #
+    #
+    # headers["Authorization"] = "Bearer {}".format(token)
+    # sign,timestamp = generator_sign(token)
+    # print("签名为： ",sign,"\n时间戳为： ",timestamp)
+    #
+    # recharge_url = "http://api.lemonban.com/futureloan/member/recharge"
+    # recharge_data = {"member_id": member_id, "amount": 2000,"sign":sign,"timestamp":timestamp}
+    # resp = requests.request("POST", recharge_url, json=recharge_data, headers=headers)
+    # print(resp.json())
+    # # 充值接口
+   pass

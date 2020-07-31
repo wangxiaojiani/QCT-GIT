@@ -55,7 +55,6 @@ def clear_Envdata_attr():
     清除EnvData类中的类属性
     :return:
     """
-
     values = EnvData.__dict__ # 得到的<class 'mappingproxy'>
     for key,value in dict(values).items():
         if key.startswith('__') or key == 'old_phone':
@@ -81,7 +80,7 @@ def extract_data_from_excel(extract_exprs,response_dict):
           raise e
       else:
           if res :
-              setattr(EnvData,key,res)
+            setattr(EnvData,key,res)
 
 
 if __name__ == '__main__':
