@@ -7159,142 +7159,24 @@ body.skin-3 {
 
 
     var resultData = {
-    "testPass": 10,
+    "testPass": 1,
     "testResult": [
         {
-            "className": "TestInvest",
-            "methodName": "test_invest_01",
-            "description": "管理员登录",
-            "spendTime": "0.284 s",
+            "className": "TestChatBySession",
+            "methodName": "test_chart_by_session_1",
+            "description": "正常传参",
+            "spendTime": "2.95 s",
             "status": "成功",
             "log": [
-                ""
-            ]
-        },
-        {
-            "className": "TestInvest",
-            "methodName": "test_invest_02",
-            "description": "管理员加标",
-            "spendTime": "0.486 s",
-            "status": "成功",
-            "log": [
-                "eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjIwMDAwNjIsI1596191016",
-                ""
-            ]
-        },
-        {
-            "className": "TestInvest",
-            "methodName": "test_invest_03",
-            "description": "普通用户登录",
-            "spendTime": "0.308 s",
-            "status": "成功",
-            "log": [
-                ""
-            ]
-        },
-        {
-            "className": "TestInvest",
-            "methodName": "test_invest_04",
-            "description": "普通用户充值",
-            "spendTime": "0.441 s",
-            "status": "成功",
-            "log": [
-                "eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjIwMDAwNTksI1596191017",
-                ""
-            ]
-        },
-        {
-            "className": "TestInvest",
-            "methodName": "test_invest_05",
-            "description": "投资失败-使用非竞标中的项目进行投资",
-            "spendTime": "1.03 s",
-            "status": "成功",
-            "log": [
-                "eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjIwMDAwNTksI1596191018",
-                ""
-            ]
-        },
-        {
-            "className": "TestInvest",
-            "methodName": "test_invest_06",
-            "description": "管理员审核通过",
-            "spendTime": "0.429 s",
-            "status": "成功",
-            "log": [
-                "eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjIwMDAwNjIsI1596191019",
-                ""
-            ]
-        },
-        {
-            "className": "TestInvest",
-            "methodName": "test_invest_07",
-            "description": "投资失败-投资金额带两位小数",
-            "spendTime": "1.07 s",
-            "status": "成功",
-            "log": [
-                "eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjIwMDAwNTksI1596191019",
-                ""
-            ]
-        },
-        {
-            "className": "TestInvest",
-            "methodName": "test_invest_08",
-            "description": "投资失败-投资金额不足百元",
-            "spendTime": "1.1 s",
-            "status": "成功",
-            "log": [
-                "eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjIwMDAwNTksI1596191020",
-                ""
-            ]
-        },
-        {
-            "className": "TestInvest",
-            "methodName": "test_invest_09",
-            "description": "投资失败-非当前用户进行投资",
-            "spendTime": "1.12 s",
-            "status": "成功",
-            "log": [
-                "eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjIwMDAwNTksI1596191021",
-                ""
-            ]
-        },
-        {
-            "className": "TestInvest",
-            "methodName": "test_invest_10",
-            "description": "投资失败-投资金额大于可投金额",
-            "spendTime": "1.13 s",
-            "status": "失败",
-            "log": [
-                "eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjIwMDAwNTksI1596191022\n",
-                "Traceback (most recent call last):\n",
-                "  File \"C:\\Users\\wangj38\\AppData\\Local\\Programs\\Python\\Python37\\lib\\unittest\\case.py\", line 59, in testPartExecutor\n    yield\n",
-                "  File \"C:\\Users\\wangj38\\AppData\\Local\\Programs\\Python\\Python37\\lib\\unittest\\case.py\", line 615, in run\n    testMethod()\n",
-                "  File \"C:\\Users\\wangj38\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\ddt.py\", line 182, in wrapper\n    return func(self, *args, **kwargs)\n",
-                "  File \"E:\\QCT-GIT\\d2020_07_01\\test_cases\\test_invest.py\", line 113, in test_invest\n    raise e\n",
-                "  File \"E:\\QCT-GIT\\d2020_07_01\\test_cases\\test_invest.py\", line 99, in test_invest\n    self.assertEqual(expect_result['msg'],actual_result.json()['msg'])\n",
-                "  File \"C:\\Users\\wangj38\\AppData\\Local\\Programs\\Python\\Python37\\lib\\unittest\\case.py\", line 839, in assertEqual\n    assertion_func(first, second, msg=msg)\n",
-                "  File \"C:\\Users\\wangj38\\AppData\\Local\\Programs\\Python\\Python37\\lib\\unittest\\case.py\", line 1220, in assertMultiLineEqual\n    self.fail(self._formatMessage(msg, standardMsg))\n",
-                "  File \"C:\\Users\\wangj38\\AppData\\Local\\Programs\\Python\\Python37\\lib\\unittest\\case.py\", line 680, in fail\n    raise self.failureException(msg)\n",
-                "AssertionError: '该标可投金额不足,可投金额：500000.0' != '充值金额必须大于100，并且可以被100整除'\n- 该标可投金额不足,可投金额：500000.0\n+ 充值金额必须大于100，并且可以被100整除\n\n"
-            ]
-        },
-        {
-            "className": "TestInvest",
-            "methodName": "test_invest_11",
-            "description": "投资成功",
-            "spendTime": "1.21 s",
-            "status": "成功",
-            "log": [
-                "eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjIwMDAwNTksI1596191023",
                 ""
             ]
         }
     ],
     "testName": "测试报告",
-    "testAll": 11,
-    "testFail": 1,
-    "beginTime": "2020-07-31 18:23:36",
-    "totalTime": "8s",
+    "testAll": 1,
+    "testFail": 0,
+    "beginTime": "2020-08-05 17:07:39",
+    "totalTime": "3s",
     "testSkip": 0,
     "testError": 0
 };

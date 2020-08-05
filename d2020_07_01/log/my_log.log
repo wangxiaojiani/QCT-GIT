@@ -206,3 +206,10 @@ AssertionError: '该标可投金额不足,可投金额：500000.0' != '充值金
 2020-07-31 18:23:44,744-root-【INFO】-test_invest.py-【47】:第>》》》   11    《《《<条执行用例执行完成
 2020-07-31 18:23:44,744-root-【INFO】-test_invest.py-【48】:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 2020-07-31 18:23:44,744-root-【INFO】-test_invest.py-【36】:========  END ============》TestInvest类下的用例已经全部执行完成
+2020-08-05 17:06:24,998-root-【INFO】-test_chatlogbysession.py-【26】:开始执行获取访客会话用例
+2020-08-05 17:06:25,013-root-【INFO】-test_chatlogbysession.py-【34】:当前执行第1条测试用例
+2020-08-05 17:06:26,291-root-【INFO】-test_chatlogbysession.py-【36】:第1条测试用例执行结束
+2020-08-05 17:07:39,547-root-【INFO】-test_chatlogbysession.py-【26】:开始执行获取访客会话用例
+2020-08-05 17:07:39,547-root-【INFO】-test_chatlogbysession.py-【34】:当前执行第1条测试用例
+2020-08-05 17:07:42,495-root-【INFO】-test_chatlogbysession.py-【36】:第1条测试用例执行结束
+2020-08-05 17:07:42,495-root-【INFO】-test_chatlogbysession.py-【30】:结束执行获取会话用例

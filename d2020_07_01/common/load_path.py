@@ -26,6 +26,9 @@ load_test_report_path =os.path.join(curent_project_path,"report_html")
 # excel测试数据目录
 load_data_path = os.path.join(curent_project_path,"test_data","nmb_qcd.xlsx")
 
+#云纹excel测试用例目录
+load_yunwen_data_path = os.path.join(curent_project_path,'test_data','yunwen.xlsx')
+
 # log日志路径
 load_log_path = os.path.join(curent_project_path,"log","my_log.log")
 

@@ -107,11 +107,11 @@ class MyRequest(object):
         logger.info ("响应体【实际结果】 -> {}".format (res.json()))
         return res
 if __name__ == '__main__':
-    from d2020_07_01.common.myconfig import cnf
-    login_url = "/futureloan/member/login"
-    login_datas = {"mobile_phone": "##", "pwd": "12345678"}
-    resp = MyRequest("post",login_url,login_datas).send_requests()
-    print(resp.text)
+    # from d2020_07_01.common.myconfig import cnf
+    # login_url = "/futureloan/member/login"
+    # login_datas = {"mobile_phone": "##", "pwd": "12345678"}
+    # resp = MyRequest("post",login_url,login_datas).send_requests()
+    # print(resp.text)
     # token = resp.json()['data']['token_info']['token']
     # memberid = resp.json()['data']['id']
     # # recharge_url ="http://api.lemonban.com/futureloan/member/recharge"
@@ -134,6 +134,16 @@ if __name__ == '__main__':
     # loan_data={"approved_or_not":'true',"loan_id": loan_id}
     # resp22=MyRequest('patch',loan_url,loan_data).send_requests(token)
     # print(resp22.json())
+    login_url = "http://47.106.201.102/chatlogMY/queryChatlogBySessionId"
+    login_datas = {
+	"access_token":"21paxvQfYqcvM1H3Zonqm3ouJsGT5UllJJyjVs5kbgXk67zfbQ",
+	"startTime":"2020-07-01 00:00:00",
+	"endTime":"2020-07-30 23:59:59",
+	"pageNo":0,
+	"pageSize":100
+}
+    resp = MyRequest("post", login_url, login_datas).send_requests()
+    print(resp.text)
 
 
 

@@ -12,6 +12,7 @@ import time
 from d2020_07_01.common.load_path import load_test_path,load_test_report_path
 from BeautifulReport import BeautifulReport
 from d2020_07_01.test_cases.test_invest import TestInvest
+from d2020_07_01.test_cases.test_chatlogbysession import TestChatBySession
 from d2020_07_01.test_cases.test_recharge import TestRecharge
 from d2020_07_01.test_cases.test_withdraw import TestWithDraw
 from d2020_07_01.test_cases.test_loan import TestLoan
@@ -37,9 +38,9 @@ suit = unittest.TestSuite()
 loader = unittest.TestLoader()
 # # suit.addTest(loader.loadTestsFromTestCase(TestRecharge))
 # suit.addTest(loader.loadTestsFromTestCase(TestWithDraw))
-suit.addTest(loader.loadTestsFromTestCase(TestInvest))
+# suit.addTest(loader.loadTestsFromTestCase(TestInvest))
 # suit.addTest(loader.loadTestsFromTestCase(TestLoan))
-
+suit.addTest(loader.loadTestsFromTestCase(TestChatBySession))
 # 生成表格式报告
 # report= load_test_report_path + "/"+ time.strftime("%Y_%m_%d",time.localtime(time.time())).replace('/','_') + "_report.html"
 # with open(report,'wb') as f:
