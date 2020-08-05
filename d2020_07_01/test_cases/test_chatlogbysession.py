@@ -41,8 +41,8 @@ class TestChatBySession(unittest.TestCase):
 			if re.search(r'#(.*?)#',case['param']):
 				case['param'] = re_replace(case['param'])
 		expect_result = json.loads(case['expect_result'])
+		logger.info('请求参数为{}'.format(case['param']))
 		res = HandleYunWenRequest(case['method'],case['url'],case['param']).send_request()
-
 		try:
 			self.assertEqual(res.json()['code'],expect_result['code'])
 			self.assertEqual(res.json()['codeDesc'],expect_result['codeDesc'])
