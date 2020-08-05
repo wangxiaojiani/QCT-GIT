@@ -9,4 +9,3 @@ import json
 
 a = ["h","e","l","l","o"]
 
-[]
